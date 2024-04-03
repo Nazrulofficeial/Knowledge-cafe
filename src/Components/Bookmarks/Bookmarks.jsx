@@ -1,8 +1,12 @@
-const Bookmarks = () => {
+
+
+const Bookmarks = ({Bookmark}) => {
+    console.log(Bookmark);
     return (
-        <header className="md:w-1/3">
-            <h2>Bookmarks</h2>
-        </header>
+        <div className="md:w-[500px]">
+            <h2 className="text-3xl">Bookmarked blogs: {Bookmark.length}</h2>
+            <h2>{}</h2>
+        </div>
     );
 };
 
