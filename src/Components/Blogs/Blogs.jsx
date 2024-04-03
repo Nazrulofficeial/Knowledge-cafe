@@ -11,7 +11,7 @@ const Blogs = ({handleAddToBookmark}) => {
     }, [])
 
     return (
-        <div className="md:w-[1100px] mx-[250px]">
+        <div className="md:w-[700px] ">
             {
                 blogs.map(blog => <Blog 
                     key={blog.id} 

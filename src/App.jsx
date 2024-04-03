@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="md:flex">
+      <div className="md:flex justify-center">
         <Blogs handleAddToBookmark={handleAddToBookmark}></Blogs>
         <Bookmarks Bookmark={Bookmark}></Bookmarks>
       </div>
