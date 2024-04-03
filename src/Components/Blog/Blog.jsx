@@ -3,7 +3,7 @@ import { HiOutlineBookmark } from "react-icons/hi";
 
 
 
-const Blog = ({ blog, handleAddToBookmark }) => {
+const Blog = ({ blog, handleAddToBookmark, handleReadingTime }) => {
 //   console.log(blog);
   const { title, cover, reading_time, author, author_img, posted_date, hashtags } = blog;
   return (
@@ -26,18 +26,20 @@ const Blog = ({ blog, handleAddToBookmark }) => {
             </div>
         </div>
         <h2 className="text-4xl font-bold">{title}</h2>
-        <p className="mt-4">
+        <p className="mt-4 mb-4">
             {
-                hashtags.map((hash, idx) => <span key={idx}><a className="ml-2 text-[#11111199] font-medium" href="">#{hash}</a></span>)
+                hashtags.map((hash, idx) => <span key={idx}><a className="ml-2 text-[#11111199] text-xl font-medium" href="">#{hash}</a></span>)
             }
         </p>
+        <a onClick={() => handleReadingTime(reading_time)} className="underline cursor-pointer text-xl text-[#6047EC]">Mark as read</a>
     </div>
   );
 };
 
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
-  handleAddToBookmark: PropTypes.func
+  handleAddToBookmark: PropTypes.func,
+  handleReadingTime: PropTypes.func
 };
 
 export default Blog;
